@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #090909;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+}
+
+/* HEADER */
+header {
+    background: #009739;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    font-size: 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a.active {
+    text-decoration: underline;
+}
+
+/* TÍTULO */
+.titulo {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.titulo h1 {
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #009739;
+}
+
+.titulo p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* JOGADORES */
+.jogadores {
+    max-width: 1100px;
+    margin: 40px auto 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.jogador-card {
+    background: rgb(0, 0, 0);
+    border-radius: 12px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    box-shadow: 0 3px 8px #009739;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.jogador-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.jogador-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.jogador-card h2 {
+    margin-top: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.jogador-card p {
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 22px;
+    background: #009739;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #007a2d;
+}
+
+/* FOOTER */
+footer {
+    background: #009739;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}

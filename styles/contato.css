@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #090909;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+}
+
+/* HEADER */
+header {
+    background: #009739;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    font-size: 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a.active {
+    text-decoration: underline;
+}
+
+
+/* ---------- HERO ---------- */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url("../img/contato.jpg") center/cover no-repeat;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* ---------- CONTATO SECTION ---------- */
+.contato {
+    width: 90%;
+    margin: 50px auto;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.info, .formulario {
+    background: #000000;
+    padding: 25px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.info h2,
+.formulario h2 {
+    color: #009739;
+    margin-bottom: 18px;
+    font-size: 24px;
+}
+
+/* ---------- FORM ---------- */
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: #009739;
+}
+
+.formulario textarea {
+    height: 120px;
+    resize: none;
+}
+
+.formulario button {
+    width: 100%;
+    padding: 12px;
+    background: #009739;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.formulario button:hover {
+    background: #007d30;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background: #009739;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
