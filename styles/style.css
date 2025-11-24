@@ -45,7 +45,6 @@ body {
 }
 
 .logo-box {
-    background-color: #02fe00; /* Verde neon */
     width: 65px;
     height: 48px;
     border-radius: 8px;
@@ -55,7 +54,7 @@ body {
 }
 
 .logo-img {
-    height: 50px;
+    height: 60px;
 }
 
 .logo-full {
@@ -116,7 +115,7 @@ body {
 
 .hero {
     height: 95vh; 
-    background-image: url('../assets/imagens/time.jpeg');
+    background-image: url('../assets/imagens/time.jpg');
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat; 

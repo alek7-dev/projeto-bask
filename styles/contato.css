@@ -45,7 +45,6 @@ body {
 }
 
 .logo-box {
-    background-color: #02fe00; 
     width: 65px;
     height: 48px;
     border-radius: 8px;
@@ -54,7 +53,7 @@ body {
     justify-content: center;
 }
 .logo-img {
-    height: 50px;
+    height: 60px;
 }
 .logo-text {
     color: #ffffff;
@@ -355,6 +354,24 @@ body {
     margin-right: 8px;
 }
 
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #02fe00; 
+    color: #000000; 
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #019a00; 
+    color : #ffffff;
+    transition: 0.3s;
+}
+
+
 /* Footer (igual ao index) */
 .footer {
     background: #181818;
@@ -412,11 +429,11 @@ body {
 }
 
 .footer-bottom {
-    border-top: 1px solid #02fe00; 
+    border-top: 1px solid #02fe00; /* Verde neon */
     margin-top: 32px;
     padding-top: 32px;
     text-align: center;
-    color: rgba(2, 254, 0, 0.5); 
+    color: rgba(2, 254, 0, 0.5); /* Verde mais desbotado */
     font-size: 14px;
 }
 
