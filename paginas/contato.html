@@ -3,53 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato – Novo Basquete Cedro</title>
-    <link rel="stylesheet" href="../styles/contato.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
-
+    <title>Novo Basquete Cedro (NBC) - Contato</title>
+    <link rel="stylesheet" href="../styles/contato.css"> <!-- Atualizado para contato.css -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">    
 </head>
 <body>
+    <!-- Header -->
+    <header class="header-fixed">
+        <div class="container">
+            <div class="header-flex">
+                <!-- Logo -->
+                <a href="index.html" class="logo-container">
+                    <div class="logo-box">
+                        <img src="../assets/imagens/logo.png" alt="" class="logo-img">
+                    </div>
+                    <span class="logo-full hidden-sm">Novo Basquete Cedro</span>
+                </a>
 
-    <header>
-        <div class="logo">NBC</div>
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="time.html">Time</a>
-            <a href="partidas.html">Partidas</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="contato.html" class="active">Contato</a>
-        </nav>
-    </header>
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Início</a>
+                    <a href="#time" class="nav-link">Time</a>
+                    <a href="#partidas" class="nav-link">Partidas</a>
+                    <a href="#galeria" class="nav-link">Galeria</a> <!-- Mantido como "Galeria" para consistência -->
+                    <a href="contato.html" class="nav-link">Contato</a>
+                </nav>
 
-    <section class="hero">
-        <h1>Contato</h1>
-        <p>Fale com o Novo Basquete Cedro</p>
-    </section>
-
-    <section class="contato">
-        <div class="info">
-            <h2>Informações</h2>
-
-            <p><strong>Email:</strong> contato@nbcedro.com</p>
-            <p><strong>Telefone:</strong> (00) 00000-0000</p>
-            <p><strong>Instagram:</strong> @novobasquetecedro</p>
-            <p><strong>Local:</strong> Cedro – CE</p>
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <span class="menu-icon">☰</span>
+                </button>
+            </div>
         </div>
 
-        <form class="formulario">
-            <h2>Envie uma mensagem</h2>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <nav class="nav-mobile">
+                <a href="index.html" class="nav-link" onclick="closeMobileMenu()">Início</a>
+                <a href="#time" class="nav-link" onclick="closeMobileMenu()">Time</a>
+                <a href="#partidas" class="nav-link" onclick="closeMobileMenu()">Partidas</a>
+                <a href="#galeria" class="nav-link" onclick="closeMobileMenu()">Galeria</a> <!-- Mantido como "Galeria" -->
+                <a href="contato.html" class="nav-link" onclick="closeMobileMenu()">Contato</a>
+            </nav>
+        </div>
+    </header>
 
-            <input type="text" placeholder="Seu nome">
-            <input type="email" placeholder="Seu email">
-            <textarea placeholder="Sua mensagem"></textarea>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="contact-page">
+            <div class="container">
+                <div class="contact-max-width">
+                    <!-- Header -->
+                    <div class="form-header">
+                        <span class="form-subtitle">Vamos jogar juntos</span>
+                        <h1 class="form-title">
+                            Solicite um <span class="form-title-highlight">Amistoso</span>
+                        </h1>
+                        <p class="form-description">
+                            Preencha o formulário abaixo para solicitar um amistoso. <strong>Atenção: Aceitamos apenas solicitações de amistosos amigáveis. Não realizamos campeonatos ou outros eventos oficiais.</strong> Responderemos em breve!
+                        </p>
+                    </div>
 
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+                    <div class="form-grid">
+                        <!-- Formulário -->
+                        <div class="form-section">
+                            <div class="form-card">
+                                <div id="success-message" class="success-message" style="display: none;">
+                                    <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+                                    <h3>Solicitação Enviada!</h3>
+                                    <p>Recebemos sua solicitação. Entraremos em contato em breve!</p>
+                                    <button type="button" onclick="resetForm()" class="cta-button">Enviar Nova Solicitação</button>
+                                </div>
 
-    <footer>
-        <p>© 2025 Novo Basquete Cedro — Todos os direitos reservados.</p>
+                                <form id="solicitacao-form" class="form-space">
+                                    <!-- Tipo de Solicitação (Agora apenas Amistoso) -->
+                                    <div class="form-group">
+                                        <label for="tipo" class="form-label">Tipo de Solicitação *</label>
+                                        <select id="tipo" name="tipo" class="form-input" required>
+                                            <option value="amistoso">Amistoso</option> <!-- Apenas esta opção -->
+                                        </select>
+                                    </div>
+
+                                    <!-- Nome da Equipe -->
+                                    <div class="form-group">
+                                        <label for="equipe" class="form-label">Nome da Equipe *</label>
+                                        <input type="text" id="equipe" name="equipe" placeholder="Digite o nome da sua equipe" class="form-input" required>
+                                    </div>
+
+                                    <!-- Contato -->
+                                    <div class="form-group">
+                                        <label for="contato" class="form-label">E-mail ou Telefone *</label>
+                                        <input type="text" id="contato" name="contato" placeholder="seu@email.com ou (88) 99999-9999" class="form-input" required>
+                                    </div>
+
+                                    <!-- Mensagem -->
+                                    <div class="form-group">
+                                        <label for="mensagem" class="form-label">Detalhes da Solicitação *</label>
+                                        <textarea id="mensagem" name="mensagem" placeholder="Conte-nos mais sobre sua solicitação: data preferida, local, nível da equipe, etc." rows="6" class="form-input" required></textarea>
+                                    </div>
+
+                                    <!-- Submit Button -->
+                                    <button type="submit" id="submit-btn" class="form-submit-btn">
+                                        <span id="submit-text"> Enviar Solicitação</span>
+                                        <span id="loading-text" style="display: none;"> Enviando...</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Informações de Contato -->
+                        <div class="contact-info">
+                            <div class="info-card">
+                                <h3 class="info-title">Informações</h3>
+                                <div class="info-list">
+                                    <div class="info-item">
+                                        <span class="info-icon"><i class="fa-solid fa-envelope"></i></span>
+                                        <div>
+                                            <p class="info-label">E-mail</p>
+                                            <p class="info-value">contato@nbccedro.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-icon"><i class="fa-solid fa-phone"></i></span>
+                                        <div>
+                                            <p class="info-label">Telefone</p>
+                                            <p class="info-value">(88) 4002-8922</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="join-card">
+                                <span class="join-icon"><i class="fa-solid fa-users"></i></span>
+                                <h3 class="join-title">Junte-se a Nós</h3>
+                                <p class="join-text">
+                                    Estamos sempre abertos a novos desafios e parcerias. Vamos fazer história juntos!
+                                </p>
+                                <div class="join-response">
+                                    <span class="response-icon"><i class="fa-solid fa-comment-dots"></i></span>
+                                    <span>Resposta em até 24h</span>
+                                </div>
+                            </div>
+
+                            <div class="tips-card">
+                                <h3 class="tips-title">Dicas</h3>
+                                <ul class="tips-list">
+                                    <li class="tips-item">
+                                        <span class="tips-bullet">•</span>
+                                        <span>Informe a data com antecedência</span>
+                                    </li>
+                                    <li class="tips-item">
+                                        <span class="tips-bullet">•</span>
+                                        <span>Descreva o nível da sua equipe</span>
+                                    </li>
+                                    <li class="tips-item">
+                                        <span class="tips-bullet">•</span>
+                                        <span>Sugira local e horário</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div class="logo-container footer-logo">
+                        <div class="logo-box">
+                            <img src="../assets/imagens/logo.png" alt="" class="logo-img">
+                        </div>
+                        <span class="logo-full">Novo Basquete Cedro</span>
+                    </div>
+                    <p class="footer-text">
+                        Paixão pelo basquete, união pela comunidade.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Navegação</h3>
+                    <div class="footer-links">
+                        <a href="index.html" class="footer-link">Início</a>
+                        <a href="#time" class="footer-link">Time</a>
+                        <a href="#partidas" class="footer-link">Partidas</a>
+                        <a href="#galeria" class="footer-link">Galeria</a> <!-- Mantido como "Galeria" -->
+                        <a href="contato.html" class="footer-link">Contato</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Contato</h3>
+                    <p class="footer-text">
+                        Entre em contato para amistosos e campeonatos
+                    </p>
+                    <a href="contato.html" class="cta-button footer-cta">
+                        Solicitar Amistoso
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Novo Basquete Cedro. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Script para Menu Mobile e Formulário -->
+    <script>
+        // Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.style.display = isMenuOpen ? 'block' : 'none';
+            mobileMenuBtn.querySelector('.menu-icon').textContent = isMenuOpen ? '✕' : '☰';
+        });
+
+        function closeMobileMenu() {
+            isMenuOpen = false;
+            mobileMenu.style.display = 'none';
+            mobileMenuBtn.querySelector('.menu-icon').textContent = '☰';
+        }
+
+        // Formulário
+        const form = document.getElementById('solicitacao-form');
+        const successMessage = document.getElementById('success-message');
+        const submitBtn = document.getElementById('submit-btn');
+        const submitText = document.getElementById('submit-text');
+        const loadingText = document.getElementById('loading-text');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Validação básica
+            const tipo = document.getElementById('tipo').value;
+            const equipe = document.getElementById('equipe').value.trim();
+            const contato = document.getElementById('contato').value.trim();
+            const mensagem = document.getElementById('mensagem').value.trim();
+
+            if (!tipo || !equipe || !contato || !mensagem) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
+
+            // Garantir que seja apenas amistoso (embora o select tenha apenas essa opção)
+            if (tipo !== 'amistoso') {
+                alert('Apenas solicitações de amistoso são aceitas.');
+                return;
+            }
+
+            // Simular loading
+            submitText.style.display = 'none';
+            loadingText.style.display = 'inline';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                // Criar objeto da solicitação
+                const solicitacao = {
+                    tipo: tipo,
+                    equipe: equipe,
+                    contato: contato,
+                    mensagem: mensagem,
+                    data: new Date().toISOString()
+                };
+
+                // Recuperar array existente do localStorage ou criar novo
+                let solicitacoes = JSON.parse(localStorage.getItem('solicitacoesNBC')) || [];
+                solicitacoes.push(solicitacao);
+
+                // Salvar no localStorage
+                localStorage.setItem('solicitacoesNBC', JSON.stringify(solicitacoes));
+
+                // Mostrar sucesso e ocultar formulário
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+
+                // Reset loading
+                submitText.style.display = 'inline';
+                loadingText.style.display = 'none';
+                submitBtn.disabled = false;
+            }, 1000); // Simula delay de envio
+        });
+
+        function resetForm() {
+            successMessage.style.display = 'none';
+            form.style.display = 'block';
+            form.reset();
+        }
+    </script>
 </body>
 </html>

@@ -1,75 +1,226 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novo Basquete Cedro</title>
+    <title>Novo Basquete Cedro (NBC) - Página Inicial</title>
     <link rel="stylesheet" href="../styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
 </head>
-<body>
 
-    <header>
-        <div class="logo">NBC</div>
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="time.html">Time</a>
-            <a href="partidas.html">Partidas</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="contato.html">Contato</a>
-        </nav>
+<body>
+    <header class="header-fixed">
+        <div class="container">
+            <div class="header-flex">
+                <!-- Logo -->
+                <a href="index.html" class="logo-container">
+                    <div class="logo-box">
+                        <img src="../assets/imagens/logo.png" alt="" class="logo-img">
+                    </div>
+                    <span class="logo-full hidden-sm">Novo Basquete Cedro</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Início</a>
+                    <a href="#time" class="nav-link">Time</a>
+                    <a href="#partidas" class="nav-link">Partidas</a>
+                    <a href="#elenco" class="nav-link">Elenco</a> <!-- Atualizado para "Elenco" -->
+                    <a href="contato.html" class="nav-link">Contato</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <span class="menu-icon">☰</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <nav class="nav-mobile">
+                <a href="index.html" class="nav-link" onclick="closeMobileMenu()">Início</a>
+                <a href="#time" class="nav-link" onclick="closeMobileMenu()">Time</a>
+                <a href="#partidas" class="nav-link" onclick="closeMobileMenu()">Partidas</a>
+                <a href="#elenco" class="nav-link" onclick="closeMobileMenu()">Elenco</a>
+                <!-- Atualizado para "Elenco" -->
+                <a href="contato.html" class="nav-link" onclick="closeMobileMenu()">Contato</a>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Novo Basquete Cedro</h1>
-        <p>A força do basquete do Cedro em quadra.</p>
-    </section>
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bem-vindo ao Novo Basquete Cedro (NBC)</h1>
+                <p>Paixão pelo jogo, união na comunidade.</p>
+                <a href="#destaques" class="cta-button">Saiba Mais</a>
+            </div>
+        </section>
 
-    <section class="contents">
-        <h2>Próximas Partidas</h2>
-        <div class="cards">
-            <div class="card">
-                <img src="img/jogo1.jpg" alt="">
-                <h3>NBC vs Time A</h3>
-                <p>Data: 10/12/2025</p>
+        <section id="destaques" class="contents">
+            <h2>Próxima Partida & Último Jogo</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Próxima Partida</h3>
+                    <p>Data: 15 de Outubro de 2023</p>
+                    <p>Local: Ginásio Municipal do Cedro</p>
+                </div>
+                <div class="card">
+                    <h3>Último Jogo</h3>
+                    <p>Placar: NBC 44 - ACEBI 33</p>
+                </div>
             </div>
-            <div class="card">
-                <img src="img/jogo2.jpg" alt="">
-                <h3>NBC vs Time B</h3>
-                <p>Data: 17/12/2025</p>
-            </div>
-            <div class="card">
-                <img src="img/jogo3.jpg" alt="">
-                <h3>NBC vs Time C</h3>
-                <p>Data: 22/12/2025</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="contents">
-        <h2>Jogadores em Destaque</h2>
-        <div class="cards">
-            <div class="card">
-                <img src="img/jogador1.jpg" alt="">
-                <h3>Nome Jogador 1</h3>
-                <p>Armador</p>
+        <section id="sobre" class="contents">
+            <h2>Sobre o Novo Basquete Cedro (NBC)</h2>
+            <div class="cards">
+                <div class="card">
+                    <p>Fundado em 2010 no coração da comunidade do Cedro, o Novo Basquete Cedro (NBC) nasceu do desejo de oferecer aos jovens um espaço onde o esporte pudesse transformar vidas. O que começou como um pequeno grupo de entusiastas que se reuniam na quadra do bairro evoluiu para uma verdadeira instituição esportiva local, reconhecida pelo compromisso com a formação humana e atlética.</p>
+                        <p>Ao longo dos anos, construímos uma trajetória marcada por resiliência, união e paixão pelo basquete. Acreditamos que o esporte é uma poderosa ferramenta de inclusão social e desenvolvimento pessoal. Por isso, nossos treinos vão além das quadras: trabalhamos valores que moldam cidadãos — disciplina, respeito, solidariedade e responsabilidade coletiva.</p>
+                        <p>O NBC é mais do que um time. Somos uma família que atravessa gerações, conectando crianças, adolescentes e adultos em um ambiente positivo e acolhedor. Muitos dos nossos atletas cresceram dentro deste projeto e hoje inspiram os mais novos, fortalecendo um ciclo contínuo de aprendizado e companheirismo.</p>
+                        <p>Cultivamos o orgulho de representar o Cedro em competições regionais e treinos diários. Cada vitória, cada treino, cada passo dado dentro da quadra faz parte de uma história construída com esforço, dedicação e amor pelo jogo. E, acima de tudo, acreditamos que o verdadeiro triunfo está na evolução de cada atleta, dentro e fora das quadras.</p>
+                        <p>O <strong>Novo Basquete Cedro</strong> segue firme em sua missão: formar atletas, formar pessoas e manter viva a chama do basquete na nossa comunidade, mostrando que quando trabalhamos juntos, alcançamos o impossível.</p>
+                </div>
             </div>
-            <div class="card">
-                <img src="img/jogador2.jpg" alt="">
-                <h3>Nome Jogador 2</h3>
-                <p>Ala</p>
-            </div>
-            <div class="card">
-                <img src="img/jogador3.jpg" alt="">
-                <h3>Nome Jogador 3</h3>
-                <p>Pivô</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <p>© 2025 Novo Basquete Cedro — Todos os direitos reservados.</p>
-    </footer>
+        <section id="elenco" class="contents">
+            <h2>Elenco do Time</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-image"> <img src="../assets/imagens/Thur.JPG" alt="Arthur F."> </div> <span
+                        class="tag">ALA-PIVÔ</span>
+                    <h3>Arthur F.</h3>
+                    <p>Número: 0</p>
+                </div>
+                <div class="card">
+                    <div class="card-image"> <img src="../assets/imagens/Esdras.JPG" alt="Esdras B."> </div> <span
+                        class="tag">ALA</span>
+                    <h3>Esdras B.</h3>
+                    <p>Número: 1</p>
+                </div>
+                <div class="card">
+                    <div class="card-image"> <img src="../assets/imagens/Alex.jpg" alt="Alex O."> </div> <span
+                        class="tag">ARMADOR</span>
+                    <h3>Alex O.</h3>
+                    <p>Número: 2</p>
+                </div>
+                <div class="card">
+                    <div class="card-image"> <img src="../assets/imagens/Yuri.JPG" alt="Yuri"> </div> <span
+                        class="tag">ALA-ARMADOR</span>
+                    <h3>Yuri</h3>
+                    <p>Número: 9</p>
+                </div>
+                <div class="card">
+                    <div class="card-image"> <img src="../assets/imagens/Hugo.JPG" alt="Hugo"> </div> <span
+                        class="tag">ALA-PIVÔ</span>
+                    <h3>Hugo</h3>
+                    <p>Número: 24</p>
+                </div>
+                <div class="card">
+                    <div class="card-image"> <img src="../assets/imagens/Henrique.JPG" alt="Carlos H."> </div> <span
+                        class="tag">ARMADOR</span>
+                    <h3>Carlos H.</h3>
+                    <p>Número: 30</p>
+                </div>
+                <div class="card">
+                    <div class="card-image"> <img src="../assets/imagens/Ibrahim.JPG" alt="Ibrahim Matos"> </div> <span
+                        class="tag">PIVÔ</span>
+                    <h3>Ibrahim M.</h3>
+                    <p>Número: 34</p>
+                </div>
+                <div class="card">
+                    <div class="card-image"> <img src="../assets/imagens/Miguel.JPG" alt="Miguel"> </div> <span
+                        class="tag">ALA-PIVÔ</span>
+                    <h3>Miguel</h3>
+                    <p>Número: 39</p>
+                </div>
+            </div>
+        </section>
 
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <div class="logo-container footer-logo">
+                            <div class="logo-box">
+                                <img src="../assets/imagens/logo.png" alt="" class="logo-img">
+                            </div>
+                            <span class="logo-full">Novo Basquete Cedro</span>
+                        </div>
+                        <p class="footer-text">
+                            Paixão pelo basquete, união pela comunidade.
+                        </p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3 class="footer-title">Navegação</h3>
+                        <div class="footer-links">
+                            <a href="index.html" class="footer-link">Início</a>
+                            <a href="#time" class="footer-link">Time</a>
+                            <a href="#partidas" class="footer-link">Partidas</a>
+                            <a href="#elenco" class="footer-link">Elenco</a> <!-- Atualizado para "Elenco" -->
+                            <a href="contato.html" class="footer-link">Contato</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3 class="footer-title">Contato</h3>
+                        <p class="footer-text">
+                            Entre em contato para amistosos e campeonatos
+                        </p>
+                        <a href="contato.html" class="cta-button footer-cta">
+                            Solicitar Amistoso
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Novo Basquete Cedro. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Script para Menu Mobile -->
+        <script>
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isMenuOpen = false;
+
+            mobileMenuBtn.addEventListener('click', () => {
+                isMenuOpen = !isMenuOpen;
+                mobileMenu.style.display = isMenuOpen ? 'block' : 'none';
+                mobileMenuBtn.querySelector('.menu-icon').textContent = isMenuOpen ? '✕' : '☰';
+            });
+
+            function closeMobileMenu() {
+                isMenuOpen = false;
+                mobileMenu.style.display = 'none';
+                mobileMenuBtn.querySelector('.menu-icon').textContent = '☰';
+            }
+            let lastScroll = 0;
+            const header = document.querySelector(".header-fixed");
+
+            window.addEventListener("scroll", () => {
+                let currentScroll = window.pageYOffset;
+
+                if (currentScroll > lastScroll) {
+                    // Descendo → esconder
+                    header.style.transform = "translateY(-100%)";
+                } else {
+                    // Subindo → mostrar
+                    header.style.transform = "translateY(0)";
+                }
+
+                lastScroll = currentScroll;
+            });
+        </script>
 </body>
+
 </html>
