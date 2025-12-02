@@ -6,81 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novo Basquete Cedro (NBC) - Página Inicial</title>
     <link rel="stylesheet" href="../styles/style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
-    <header class="header-fixed">
+    <header class="nbc-header">
         <div class="container">
-            <div class="header-flex">
-                <!-- Logo -->
-                <a href="index.html" class="logo-container">
-                    <div class="logo-box">
-                        <img src="../assets/imagens/logo.png" alt="" class="logo-img">
+            <div class="nbc-header__flex">
+                <a href="index.html" class="nbc-logo">
+                    <div class="nbc-logo__box">
+                        <img src="../assets/imagens/logo.png" alt="" class="nbc-logo__img">
                     </div>
-                    <span class="logo-full hidden-sm">Novo Basquete Cedro</span>
+                    <span class="nbc-logo__text nbc-hidden-sm">Novo Basquete Cedro</span>
                 </a>
 
-                <!-- Desktop Navigation -->
-                <nav class="nav-desktop">
-                    <a href="index.html" class="nav-link">Início</a>
-                    <a href="#time" class="nav-link">Time</a>
-                    <a href="#partidas" class="nav-link">Partidas</a>
-                    <a href="#elenco" class="nav-link">Elenco</a> <!-- Atualizado para "Elenco" -->
-                    <a href="contato.html" class="nav-link">Contato</a>
+                <nav class="nbc-nav--desktop">
+                    <a href="index.html" class="nbc-nav__link">Início</a>
+                    <a href="#partidas" class="nbc-nav__link">Partidas</a>
+                    <a href="#sobre" class="nbc-nav__link">Sobre</a>
+                    <a href="#elenco" class="nbc-nav__link">Elenco</a> 
+                    <a href="contato.html" class="nbc-nav__link">Contato</a>
                 </nav>
 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn" id="mobile-menu-btn">
-                    <span class="menu-icon">☰</span>
+                <button class="nbc-mobile-menu-btn" id="mobile-menu-btn">
+                    <span class="nbc-menu-icon">☰</span>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobile-menu">
-            <nav class="nav-mobile">
-                <a href="index.html" class="nav-link" onclick="closeMobileMenu()">Início</a>
-                <a href="#time" class="nav-link" onclick="closeMobileMenu()">Time</a>
-                <a href="#partidas" class="nav-link" onclick="closeMobileMenu()">Partidas</a>
-                <a href="#elenco" class="nav-link" onclick="closeMobileMenu()">Elenco</a>
-                <!-- Atualizado para "Elenco" -->
-                <a href="contato.html" class="nav-link" onclick="closeMobileMenu()">Contato</a>
+        <div class="nbc-mobile-menu" id="mobile-menu">
+            <nav class="nbc-nav--mobile">
+                <a href="index.html" class="nbc-nav__link" onclick="closeMobileMenu()">Início</a>
+                <a href="#partidas" class="nbc-nav__link" onclick="closeMobileMenu()">Partidas</a>
+                <a href="#sobre" class="nbc-nav__link" onclick="closeMobileMenu()">Sobre</a>
+                <a href="#elenco" class="nbc-nav__link" onclick="closeMobileMenu()">Elenco</a>
+                <a href="contato.html" class="nbc-nav__link" onclick="closeMobileMenu()">Contato</a>
             </nav>
         </div>
     </header>
 
-    <main class="main-content">
-        <section class="hero">
-            <div class="hero-content">
+    <main class="nbc-main">
+        <section class="nbc-hero">
+            <div class="nbc-hero__content">
                 <h1>Bem-vindo ao Novo Basquete Cedro (NBC)</h1>
                 <p>Paixão pelo jogo, união na comunidade.</p>
                 <a href="#destaques" class="cta-button">Saiba Mais</a>
             </div>
         </section>
 
-        <section id="destaques" class="contents">
+        <section class="matchs" id="partidas">
             <h2>Próxima Partida & Último Jogo</h2>
-            <div class="cards">
-                <div class="card">
+            <div class="nbc-cards">
+                <div class="nbc-match">
                     <h3>Próxima Partida</h3>
-                    <p>NBC  - BigDam</p>
+                    <div class="nbc-match-images">
+                        <img src="../assets/imagens/logo.png" alt="NBC">
+                        <h1>X</h1>
+                        <img src="../assets/imagens/Big Dam.png" alt="BigDam">
+                    </div>
+                    <p>NBC - Big Dam</p>
                     <p>Data: 15 de Outubro de 2023</p>
                     <p>Local: Ginásio Municipal do Cedro</p>
                 </div>
-                <div class="card">
+                <div class="nbc-match">
                     <h3>Último Jogo</h3>
-                    <p>Placar: NBC 44 - ACEBI 33</p>
+                    <div class="nbc-match-images">
+                        <img src="../assets/imagens/logo.png" alt="NBC">
+                        <h1>X</h1>
+                        <img src="../assets/imagens/Vaca Morta.png" alt="Vaca Morta">
+                    </div>
+                    <p>Placar: NBC 44 - Vaca Morta 27</p>
                 </div>
             </div>
-        </section>
+        </section>  
 
-        <section id="sobre" class="contents">
+        <section id="sobre" class="nbc-section">
             <h2>Sobre o Novo Basquete Cedro (NBC)</h2>
-            <div class="cards">
-                <div class="card">
+            <div class="nbc-cards">
+                <div class="nbc-card">
                     <p>Fundado em 2010 no coração da comunidade do Cedro, o <strong>Novo Basquete Cedro (NBC)</strong>
                         nasceu do desejo de oferecer aos jovens um espaço onde o esporte pudesse transformar vidas. O
                         que começou como um pequeno grupo de entusiastas que se reuniam na quadra do bairro evoluiu para
@@ -105,54 +111,54 @@
             </div>
         </section>
 
-        <section id="elenco" class="contents">
+        <section id="elenco" class="nbc-section">
             <h2>Elenco do Time</h2>
-            <div class="cards">
-                <div class="card">
-                    <div class="card-image"> <img src="../assets/imagens/Thur.JPG" alt="Arthur F."> </div> <span
-                        class="tag">ALA</span>
+            <div class="nbc-cards">
+                <div class="nbc-card">
+                    <div class="nbc-card__image"> <img src="../assets/imagens/Thur.JPG" alt="Arthur F."> </div> <span
+                        class="nbc-tag">ALA</span>
                     <h3>Arthur F.</h3>
                     <p>Número: 0</p>
                 </div>
-                <div class="card">
-                    <div class="card-image"> <img src="../assets/imagens/Esdras.JPG" alt="Esdras B."> </div> <span
-                        class="tag">ALA-PIVÔ</span>
+                <div class="nbc-card">
+                    <div class="nbc-card__image"> <img src="../assets/imagens/Esdras.JPG" alt="Esdras B."> </div> <span
+                        class="nbc-tag">ALA-PIVÔ</span>
                     <h3>Esdras B.</h3>
                     <p>Número: 1</p>
                 </div>
-                <div class="card">
-                    <div class="card-image"> <img src="../assets/imagens/Alex.jpg" alt="Alex O."> </div> <span
-                        class="tag">ARMADOR</span>
+                <div class="nbc-card">
+                    <div class="nbc-card__image"> <img src="../assets/imagens/Alex.jpg" alt="Alex O."> </div> <span
+                        class="nbc-tag">ARMADOR</span>
                     <h3>Alex O.</h3>
                     <p>Número: 2</p>
                 </div>
-                <div class="card">
-                    <div class="card-image"> <img src="../assets/imagens/Yuri.JPG" alt="Yuri"> </div> <span
-                        class="tag">ALA-ARMADOR</span>
+                <div class="nbc-card">
+                    <div class="nbc-card__image"> <img src="../assets/imagens/Yuri.JPG" alt="Yuri"> </div> <span
+                        class="nbc-tag">ALA-ARMADOR</span>
                     <h3>Yuri</h3>
                     <p>Número: 9</p>
                 </div>
-                <div class="card">
-                    <div class="card-image"> <img src="../assets/imagens/Hugo.JPG" alt="Hugo"> </div> <span
-                        class="tag">ALA-PIVÔ</span>
+                <div class="nbc-card">
+                    <div class="nbc-card__image"> <img src="../assets/imagens/Hugo.JPG" alt="Hugo"> </div> <span
+                        class="nbc-tag">ALA-PIVÔ</span>
                     <h3>Hugo</h3>
                     <p>Número: 24</p>
                 </div>
-                <div class="card">
-                    <div class="card-image"> <img src="../assets/imagens/Henrique.JPG" alt="Carlos H."> </div> <span
-                        class="tag">ARMADOR</span>
+                <div class="nbc-card">
+                    <div class="nbc-card__image"> <img src="../assets/imagens/Henrique.JPG" alt="Carlos H."> </div> <span
+                        class="nbc-tag">ARMADOR</span>
                     <h3>Carlos H.</h3>
                     <p>Número: 30</p>
                 </div>
-                <div class="card">
-                    <div class="card-image"> <img src="../assets/imagens/Ibrahim.JPG" alt="Ibrahim Matos"> </div> <span
-                        class="tag">PIVÔ</span>
+                <div class="nbc-card">
+                    <div class="nbc-card__image"> <img src="../assets/imagens/Ibrahim.JPG" alt="Ibrahim Matos"> </div> <span
+                        class="nbc-tag">PIVÔ</span>
                     <h3>Ibrahim M.</h3>
                     <p>Número: 34</p>
                 </div>
-                <div class="card">
-                    <div class="card-image"> <img src="../assets/imagens/Miguel.JPG" alt="Miguel"> </div> <span
-                        class="tag">ALA-PIVÔ</span>
+                <div class="nbc-card">
+                    <div class="nbc-card__image"> <img src="../assets/imagens/Miguel.JPG" alt="Miguel"> </div> <span
+                        class="nbc-tag">ALA-PIVÔ</span>
                     <h3>Miguel</h3>
                     <p>Número: 39</p>
                 </div>
@@ -160,44 +166,44 @@
         </section>
 
         <!-- Footer -->
-        <footer class="footer">
+        <footer class="nbc-footer">
             <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-section">
-                        <div class="logo-container footer-logo">
-                            <div class="logo-box">
-                                <img src="../assets/imagens/logo.png" alt="" class="logo-img">
+                <div class="nbc-footer__grid">
+                    <div class="nbc-footer__section">
+                        <div class="nbc-logo nbc-footer__logo">
+                            <div class="nbc-logo__box">
+                                <img src="../assets/imagens/logo.png" alt="" class="nbc-logo__img">
                             </div>
-                            <span class="logo-full">Novo Basquete Cedro</span>
+                            <span class="nbc-logo__text">Novo Basquete Cedro</span>
                         </div>
-                        <p class="footer-text">
+                        <p class="nbc-footer__text">
                             Paixão pelo basquete, união pela comunidade.
                         </p>
                     </div>
 
-                    <div class="footer-section">
-                        <h3 class="footer-title">Navegação</h3>
-                        <div class="footer-links">
-                            <a href="index.html" class="footer-link">Início</a>
-                            <a href="#time" class="footer-link">Time</a>
-                            <a href="#partidas" class="footer-link">Partidas</a>
-                            <a href="#elenco" class="footer-link">Elenco</a> <!-- Atualizado para "Elenco" -->
-                            <a href="contato.html" class="footer-link">Contato</a>
+                    <div class="nbc-footer__section">
+                        <h3 class="nbc-footer__title">Navegação</h3>
+                        <div class="nbc-footer__links">
+                            <a href="index.html" class="nbc-footer__link">Início</a>
+                            <a href="#partidas" class="nbc-footer__link">Partidas</a>
+                            <a href="#sobre" class="nbc-footer__link">Sobre/a>
+                            <a href="#elenco" class="nbc-footer__link">Elenco</a> <!-- Atualizado para "Elenco" -->
+                            <a href="contato.html" class="nbc-footer__link">Contato</a>
                         </div>
                     </div>
 
-                    <div class="footer-section">
-                        <h3 class="footer-title">Contato</h3>
-                        <p class="footer-text">
+                    <div class="nbc-footer__section">
+                        <h3 class="nbc-footer__title">Contato</h3>
+                        <p class="nbc-footer__text">
                             Entre em contato para amistosos e campeonatos
                         </p>
-                        <a href="contato.html" class="cta-button footer-cta">
+                        <a href="contato.html" class="cta-button nbc-footer__cta">
                             Solicitar Amistoso
                         </a>
                     </div>
                 </div>
 
-                <div class="footer-bottom">
+                <div class="nbc-footer__bottom">
                     <p>&copy; 2025 Novo Basquete Cedro. Todos os direitos reservados.</p>
                 </div>
             </div>
@@ -212,16 +218,16 @@
             mobileMenuBtn.addEventListener('click', () => {
                 isMenuOpen = !isMenuOpen;
                 mobileMenu.style.display = isMenuOpen ? 'block' : 'none';
-                mobileMenuBtn.querySelector('.menu-icon').textContent = isMenuOpen ? '✕' : '☰';
+                mobileMenuBtn.querySelector('.nbc-menu-icon').textContent = isMenuOpen ? '✕' : '☰';
             });
 
             function closeMobileMenu() {
                 isMenuOpen = false;
                 mobileMenu.style.display = 'none';
-                mobileMenuBtn.querySelector('.menu-icon').textContent = '☰';
+                mobileMenuBtn.querySelector('.nbc-menu-icon').textContent = '☰';
             }
             let lastScroll = 0;
-            const header = document.querySelector(".header-fixed");
+            const header = document.querySelector(".nbc-header");
 
             window.addEventListener("scroll", () => {
                 let currentScroll = window.pageYOffset;
@@ -238,5 +244,4 @@
             });
         </script>
 </body>
-
 </html>
