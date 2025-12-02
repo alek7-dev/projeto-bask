@@ -216,89 +216,84 @@
 
     <!-- Script para Menu Mobile e Formulário -->
     <script>
-        // Menu Mobile
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        let isMenuOpen = false;
+    // Menu Mobile
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let isMenuOpen = false;
 
-        mobileMenuBtn.addEventListener('click', () => {
-            isMenuOpen = !isMenuOpen;
-            mobileMenu.style.display = isMenuOpen ? 'block' : 'none';
-            mobileMenuBtn.querySelector('.menu-icon').textContent = isMenuOpen ? '✕' : '☰';
-        });
+    mobileMenuBtn.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        mobileMenu.style.display = isMenuOpen ? 'block' : 'none';
+        mobileMenuBtn.querySelector('.menu-icon').textContent = isMenuOpen ? '✕' : '☰';
+    });
 
-        function closeMobileMenu() {
-            isMenuOpen = false;
-            mobileMenu.style.display = 'none';
-            mobileMenuBtn.querySelector('.menu-icon').textContent = '☰';
+    function closeMobileMenu() {
+        isMenuOpen = false;
+        mobileMenu.style.display = 'none';
+        mobileMenuBtn.querySelector('.menu-icon').textContent = '☰';
+    }
+
+    // Formulário
+    const form = document.getElementById('solicitacao-form');
+    const successMessage = document.getElementById('success-message');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitText = document.getElementById('submit-text');
+    const loadingText = document.getElementById('loading-text');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Validação básica para os campos que EXISTEM no HTML.
+        // O campo 'tipo' foi removido da validação, pois não existe no HTML.
+        const equipe = document.getElementById('equipe').value.trim();
+        const contato = document.getElementById('contato').value.trim();
+        const mensagem = document.getElementById('mensagem').value.trim();
+
+        if (!equipe || !contato || !mensagem) {
+            alert('Por favor, preencha todos os campos obrigatórios.');
+            return;
         }
+        
+        // Simular loading
+        submitText.style.display = 'none';
+        loadingText.style.display = 'inline';
+        submitBtn.disabled = true;
 
-        // Formulário
-        const form = document.getElementById('solicitacao-form');
-        const successMessage = document.getElementById('success-message');
-        const submitBtn = document.getElementById('submit-btn');
-        const submitText = document.getElementById('submit-text');
-        const loadingText = document.getElementById('loading-text');
+        setTimeout(() => {
+            // Criar objeto da solicitação
+            const solicitacao = {
+                // Definimos o tipo como 'amistoso' fixo, pois o formulário é apenas para isso
+                tipo: 'amistoso',
+                equipe: equipe,
+                contato: contato,
+                mensagem: mensagem,
+                data: new Date().toISOString()
+            };
 
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
+            // Recuperar array existente do localStorage ou criar novo
+            let solicitacoes = JSON.parse(localStorage.getItem('solicitacoesNBC')) || [];
+            solicitacoes.push(solicitacao);
 
-            // Validação básica
-            const tipo = document.getElementById('tipo').value;
-            const equipe = document.getElementById('equipe').value.trim();
-            const contato = document.getElementById('contato').value.trim();
-            const mensagem = document.getElementById('mensagem').value.trim();
+            // Salvar no localStorage
+            localStorage.setItem('solicitacoesNBC', JSON.stringify(solicitacoes));
 
-            if (!tipo || !equipe || !contato || !mensagem) {
-                alert('Por favor, preencha todos os campos obrigatórios.');
-                return;
-            }
+            // Mostrar sucesso e ocultar formulário
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
 
-            // Garantir que seja apenas amistoso (embora o select tenha apenas essa opção)
-            if (tipo !== 'amistoso') {
-                alert('Apenas solicitações de amistoso são aceitas.');
-                return;
-            }
+            // Reset loading
+            submitText.style.display = 'inline';
+            loadingText.style.display = 'none';
+            submitBtn.disabled = false;
+        }, 1000); 
+    });
 
-            // Simular loading
-            submitText.style.display = 'none';
-            loadingText.style.display = 'inline';
-            submitBtn.disabled = true;
-
-            setTimeout(() => {
-                // Criar objeto da solicitação
-                const solicitacao = {
-                    tipo: tipo,
-                    equipe: equipe,
-                    contato: contato,
-                    mensagem: mensagem,
-                    data: new Date().toISOString()
-                };
-
-                // Recuperar array existente do localStorage ou criar novo
-                let solicitacoes = JSON.parse(localStorage.getItem('solicitacoesNBC')) || [];
-                solicitacoes.push(solicitacao);
-
-                // Salvar no localStorage
-                localStorage.setItem('solicitacoesNBC', JSON.stringify(solicitacoes));
-
-                // Mostrar sucesso e ocultar formulário
-                form.style.display = 'none';
-                successMessage.style.display = 'block';
-
-                // Reset loading
-                submitText.style.display = 'inline';
-                loadingText.style.display = 'none';
-                submitBtn.disabled = false;
-            }, 1000); // Simula delay de envio
-        });
-
-        function resetForm() {
-            successMessage.style.display = 'none';
-            form.style.display = 'block';
-            form.reset();
-        }
-    </script>
+    function resetForm() {
+        successMessage.style.display = 'none';
+        form.style.display = 'block';
+        form.reset();
+    }
+</script>
 </body>
 
 </html>

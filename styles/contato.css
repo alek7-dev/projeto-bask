@@ -1,48 +1,64 @@
 /* Reset básico */
 * {
+    /* Remove margens e preenchimentos padrão */
     margin: 0;
     padding: 0;
+    /* Inclui padding e border na largura/altura total do elemento */
     box-sizing: border-box;
 }
 
 body {
+    /* Fundo preto escuro */
     background: #090909;
+    /* Fonte padrão */
     font-family: 'Roboto', sans-serif;
+    /* Cor do texto padrão */
     color: #ffffff;
 }
 
 /* Header */
 .header-fixed {
+    /* Fixa o cabeçalho no topo */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    /* Fundo semi-transparente e com desfoque */
     background: rgba(9, 9, 9, 0.95);
     backdrop-filter: blur(8px);
+    /* Borda inferior neon */
     border-bottom: 3px solid #02fe00;
+    /* Transições suaves */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Sombra neon suave */
     box-shadow: 0 0 20px rgba(2, 254, 0, 0.3);
+    /* Garante que fique acima de outros elementos */
     z-index: 1000;
 }
 
 .header-fixed:hover {
+    /* Aumenta o brilho da sombra ao passar o mouse */
     box-shadow: 0 0 30px rgba(2, 254, 0, 0.5);
 }
 
 .container {
+    /* Centraliza o conteúdo e define largura máxima */
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .header-flex {
+    /* Flexbox para alinhar logo e menu */
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 90px;
 }
 
+/* Logo */
 .logo-container {
+    /* Estilo do link do logo */
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -51,26 +67,31 @@ body {
 }
 
 .logo-container:hover {
+    /* Efeito de zoom no logo */
     transform: scale(1.05);
 }
 
 .logo-box {
+    /* Container do ícone/imagem do logo */
     width: 75px;
     height: 55px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Fundo gradiente neon */
     background: linear-gradient(45deg, #02fe00, #019a00);
     box-shadow: 0 0 15px rgba(2, 254, 0, 0.6);
 }
 
 .logo-img {
+    /* Estilo da imagem do logo */
     height: 70px;
     filter: drop-shadow(0 0 5px rgba(2, 254, 0, 0.8));
 }
 
 .logo-full {
+    /* Estilo do texto do logo */
     font-size: 24px;
     font-weight: 700;
     margin-left: 15px;
@@ -78,14 +99,18 @@ body {
 }
 
 .hidden-sm {
+    /* Classe utilitária para esconder em telas pequenas */
     display: none;
 }
 
+/* Navegação Desktop */
 .nav-desktop {
+    /* Escondido por padrão (mobile-first) */
     display: none;
 }
 
 .nav-link {
+    /* Estilo base dos links */
     color: #ffffff;
     text-decoration: none;
     font-weight: 500;
@@ -96,6 +121,7 @@ body {
 }
 
 .nav-link::after {
+    /* Cria a linha inferior de hover */
     content: '';
     position: absolute;
     bottom: -5px;
@@ -107,16 +133,19 @@ body {
 }
 
 .nav-link:hover {
+    /* Texto neon e brilho no hover */
     color: #02fe00;
-    /* Verde neon */
     text-shadow: 0 0 10px rgba(2, 254, 0, 0.8);
 }
 
 .nav-link:hover::after {
+    /* Linha inferior aparece no hover */
     width: 100%;
 }
 
+/* Menu Mobile */
 .mobile-menu-btn {
+    /* Estilo do botão hamburguer */
     background: none;
     border: none;
     cursor: pointer;
@@ -130,10 +159,12 @@ body {
 }
 
 .menu-icon {
+    /* Tamanho do ícone */
     font-size: 32px;
 }
 
 .mobile-menu {
+    /* Menu mobile escondido */
     display: none;
     background: #181818;
     border-top: 3px solid #02fe00;
@@ -141,6 +172,7 @@ body {
 }
 
 .nav-mobile {
+    /* Layout dos links no menu mobile */
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -149,27 +181,32 @@ body {
 
 /* Main */
 .main-content {
+    /* Padding para compensar o header fixo */
     padding-top: 80px;
 }
 
-/* Página de Contato */
+/* Página de Contato - Estilos Específicos */
 .contact-page {
+    /* Garante altura mínima para telas pequenas */
     min-height: 100vh;
     background: #090909;
     padding: 80px 0;
 }
 
 .contact-max-width {
+    /* Largura máxima para o conteúdo da página de contato */
     max-width: 896px;
     margin: 0 auto;
 }
 
 .form-header {
+    /* Centraliza o cabeçalho do formulário */
     text-align: center;
     margin-bottom: 48px;
 }
 
 .form-subtitle {
+    /* Subtítulo neon (ex: "Fale Conosco") */
     color: #02fe00;
     font-weight: 700;
     font-size: 14px;
@@ -179,6 +216,7 @@ body {
 }
 
 .form-title {
+    /* Título principal do formulário */
     font-size: 36px;
     font-weight: 900;
     margin: 8px 0 16px;
@@ -187,6 +225,7 @@ body {
 }
 
 .form-title-highlight {
+    /* Efeito de texto com gradiente neon (Webkit para compatibilidade) */
     background: linear-gradient(to right, #02fe00, #019a00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -194,6 +233,7 @@ body {
 }
 
 .form-description {
+    /* Descrição com cor neon sutil */
     color: rgba(2, 254, 0, 0.7);
     font-size: 18px;
     max-width: 672px;
@@ -202,19 +242,23 @@ body {
 }
 
 .form-grid {
+    /* Layout de grade, 1 coluna por padrão (mobile) */
     display: grid;
     grid-template-columns: 1fr;
     gap: 32px;
 }
 
 .form-section {
+    /* Garante que a seção ocupe 1 coluna na grade */
     grid-column: span 1;
 }
 
 .form-card {
+    /* Estilo base do cartão principal (formulário) */
     background: #181818;
     border-radius: 16px;
     padding: 32px;
+    /* Borda e sombra neon */
     border: 2px solid #02fe00;
     box-shadow: 0 0 15px rgba(2, 254, 0, 0.5);
     transition: all 0.3s ease;
@@ -224,6 +268,7 @@ body {
 }
 
 .form-card::before {
+    /* Efeito de brilho/overlay sutil */
     content: '';
     position: absolute;
     top: 0;
@@ -236,20 +281,24 @@ body {
 }
 
 .form-card:hover::before {
+    /* Ativa o brilho no hover */
     opacity: 1;
 }
 
 .form-card:hover {
+    /* Efeito de levitação e brilho forte no hover */
     transform: translateY(-8px);
     box-shadow: 0 8px 24px rgba(2, 254, 0, 0.8), 0 0 40px rgba(2, 254, 0, 0.5);
 }
 
+/* Mensagem de Sucesso */
 .success-message {
     text-align: center;
     padding: 48px 0;
 }
 
 .success-icon {
+    /* Círculo neon para o ícone de sucesso */
     background: rgba(2, 254, 0, 0.2);
     width: 80px;
     height: 80px;
@@ -276,18 +325,21 @@ body {
 }
 
 .form-space {
+    /* Espaçamento vertical entre grupos de formulário */
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
 .form-group {
+    /* Contêiner de label + input */
     display: flex;
     flex-direction: column;
     z-index: 30;
 }
 
 .form-label {
+    /* Estilo da label */
     color: #ffffff;
     margin-bottom: 8px;
     font-weight: 500;
@@ -295,7 +347,9 @@ body {
 }
 
 .form-input {
+    /* Estilo dos campos de input/textarea */
     background: #272727;
+    /* Borda fina neon */
     border: 1px solid #02fe00;
     color: #ffffff;
     padding: 12px;
@@ -305,15 +359,18 @@ body {
 }
 
 .form-input:focus {
+    /* Brilho neon ao focar no campo */
     border-color: #02fe00;
     box-shadow: 0 0 10px rgba(2, 254, 0, 0.6);
 }
 
 .form-input::placeholder {
+    /* Placeholder em cor neon sutil */
     color: rgba(2, 254, 0, 0.5);
 }
 
 .form-submit-btn {
+    /* Estilo do botão de envio */
     width: 100%;
     background: linear-gradient(45deg, #02fe00, #019a00);
     color: #000000;
@@ -327,12 +384,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Sombra neon */
     box-shadow: 0 0 15px rgba(2, 254, 0, 0.6);
     position: relative;
     overflow: hidden;
+    z-index: 40;
 }
 
 .form-submit-btn::before {
+    /* Efeito de brilho que desliza */
     content: '';
     position: absolute;
     top: 0;
@@ -348,6 +408,7 @@ body {
 }
 
 .form-submit-btn:hover {
+    /* Inverte gradiente, muda cor do texto e aplica zoom */
     background: linear-gradient(45deg, #019a00, #02fe00);
     color: #ffffff;
     transform: scale(1.05);
@@ -355,10 +416,13 @@ body {
 }
 
 #p-white {
+    /* Sobrescrita para texto de parágrafo branco */
     color: #ffffff;
 }
 
+/* Cards de Informação Lateral */
 .contact-info {
+    /* Layout dos cartões laterais */
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -367,6 +431,7 @@ body {
 .info-card,
 .join-card,
 .tips-card {
+    /* Estilo base para todos os cartões de informação */
     background: #181818;
     border-radius: 16px;
     padding: 24px;
@@ -380,6 +445,7 @@ body {
 .info-card::before,
 .join-card::before,
 .tips-card::before {
+    /* Efeito de brilho/overlay sutil */
     content: '';
     position: absolute;
     top: 0;
@@ -400,6 +466,7 @@ body {
 .info-card:hover,
 .join-card:hover,
 .tips-card:hover {
+    /* Efeito de levitação e brilho forte no hover */
     transform: translateY(-8px);
     box-shadow: 0 8px 24px rgba(2, 254, 0, 0.8), 0 0 40px rgba(2, 254, 0, 0.5);
 }
@@ -407,12 +474,14 @@ body {
 .info-title,
 .join-title,
 .tips-title {
+    /* Títulos dos cartões laterais */
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 16px;
     text-shadow: 0 0 10px rgba(2, 254, 0, 0.5);
 }
 
+/* Cartão de Informações (contato) */
 .info-list {
     display: flex;
     flex-direction: column;
@@ -426,28 +495,35 @@ body {
 }
 
 .info-icon {
+    /* Contêiner do ícone de informação */
     color: #02fe00;
     margin-top: 4px;
     font-size: 20px;
 }
 
 .info-label {
+    /* Rótulo da informação (ex: "Email") */
     color: rgba(2, 254, 0, 0.7);
 }
 
 .info-value {
+    /* Valor da informação (ex: "contato@nbc.com") */
     color: #ffffff;
     font-weight: 500;
     text-shadow: 0 0 5px rgba(2, 254, 0, 0.3);
 }
 
+/* Cartão de Chamada para Ação (Join) */
 .join-card {
+    /* Fundo gradiente forte */
     background: linear-gradient(to bottom right, #02fe00, #019a00);
     color: #ffffff;
+    /* Remove a borda neon (já é um gradiente forte) */
     border: none;
 }
 
 .join-icon {
+    /* Ícone grande de join */
     font-size: 32px;
     margin-bottom: 16px;
 }
@@ -459,6 +535,7 @@ body {
 }
 
 .join-response {
+    /* Tempo de resposta */
     display: flex;
     align-items: center;
     gap: 6px;
@@ -468,6 +545,7 @@ body {
     font-size: 16px;
 }
 
+/* Cartão de Dicas (Tips) */
 .tips-list {
     display: flex;
     flex-direction: column;
@@ -482,11 +560,14 @@ body {
 }
 
 .tips-bullet {
+    /* Bullet point neon */
     color: #02fe00;
     margin-right: 8px;
 }
 
+/* Botão CTA Genérico (usado no footer e join card) */
 .cta-button {
+    /* Estilo do botão CTA, replicando o efeito de brilho e zoom */
     display: inline-block;
     padding: 12px 24px;
     background: linear-gradient(45deg, #02fe00, #019a00);
@@ -501,6 +582,7 @@ body {
 }
 
 .cta-button::before {
+    /* Efeito de brilho */
     content: '';
     position: absolute;
     top: 0;
@@ -524,6 +606,7 @@ body {
 
 /* Footer */
 .footer {
+    /* Fundo e borda neon do rodapé */
     background: #181818;
     border-top: 3px solid #02fe00;
     padding: 60px 0;
@@ -531,6 +614,7 @@ body {
 }
 
 .footer-grid {
+    /* Layout do rodapé (1 coluna em mobile) */
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
@@ -545,6 +629,7 @@ body {
 }
 
 .footer-title {
+    /* Títulos do rodapé */
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -553,6 +638,7 @@ body {
 }
 
 .footer-text {
+    /* Texto do rodapé */
     color: rgba(2, 254, 0, 0.7);
     font-size: 16px;
     margin-bottom: 10px;
@@ -560,12 +646,14 @@ body {
 }
 
 .footer-links {
+    /* Links do rodapé */
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
 .footer-link {
+    /* Estilo do link do rodapé e efeito de linha de hover */
     color: rgba(2, 254, 0, 0.7);
     text-decoration: none;
     font-size: 16px;
@@ -586,7 +674,6 @@ body {
 
 .footer-link:hover {
     color: #02fe00;
-    /* Verde neon */
     text-shadow: 0 0 10px rgba(2, 254, 0, 0.8);
 }
 
@@ -595,11 +682,13 @@ body {
 }
 
 .footer-cta {
+    /* Ajuste de padding para CTA no footer */
     padding: 10px 28px;
     font-size: 16px;
 }
 
 .footer-bottom {
+    /* Direitos autorais */
     border-top: 3px solid #02fe00;
     margin-top: 40px;
     padding-top: 40px;
@@ -609,6 +698,7 @@ body {
     text-shadow: 0 0 5px rgba(2, 254, 0, 0.2);
 }
 
+/* Estilização dos Ícones (Font Awesome ou similar) */
 .success-icon i {
     color: #02fe00;
     font-size: 42px;
@@ -640,29 +730,37 @@ body {
 .join-icon i,
 .response-icon i,
 .tips-bullet i {
+    /* Garante alinhamento centralizado para os ícones */
     display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
+/* --- Responsividade --- */
+
+/* Tablets/Desktops Pequenos (min-width 768px) */
 @media (min-width: 768px) {
 
     /* Header */
     .mobile-menu-btn {
+        /* Esconde botão hamburguer */
         display: none;
     }
 
     .nav-desktop {
+        /* Exibe menu desktop */
         display: flex;
         align-items: center;
     }
 
     .logo-full {
+        /* Exibe o texto completo do logo */
         display: block;
     }
 
     /* Footer Grid (3 Colunas) */
     .footer-grid {
+        /* Layout de 3 colunas (Logo/Texto, Links, CTA) */
         grid-template-columns: 2fr 1fr 1fr;
         gap: 30px;
     }
@@ -671,6 +769,7 @@ body {
 /* Desktops (A partir de 900px) */
 @media (min-width: 900px) {
     .form-grid {
+        /* Layout de 2 colunas para o formulário e cards laterais */
         grid-template-columns: 2fr 1fr;
         gap: 40px;
     }
@@ -679,16 +778,19 @@ body {
 /* Mobile Padrão (Telas até 767px) */
 @media (max-width: 767px) {
     .container {
+        /* Ajuste de padding para telas pequenas */
         padding: 0 15px;
     }
 
     /* Header */
     .header-flex {
+        /* Reduz a altura do header em mobile */
         height: 70px;
     }
 
     /* Títulos e Descrição */
     .form-title {
+        /* Reduz o tamanho do título principal do formulário */
         font-size: 28px;
     }
 
@@ -702,6 +804,7 @@ body {
     }
 
     .footer-bottom {
+        /* Reduz a fonte dos direitos autorais */
         font-size: 12px;
     }
 }

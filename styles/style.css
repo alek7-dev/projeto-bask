@@ -1,108 +1,143 @@
 /* Reset básico */
 * {
+    /* Remove margens e preenchimentos padrão de todos os elementos */
     margin: 0;
     padding: 0;
+    /* Garante que padding e border sejam incluídos na largura/altura total do elemento */
     box-sizing: border-box;
 }
 
 /* Body */
 body {
+    /* Fundo preto escuro para o modo "dark mode" */
     background: #090909;
+    /* Define a fonte padrão como Roboto (para texto de corpo) */
     font-family: 'Roboto', sans-serif;
+    /* Define a cor do texto padrão como branco */
     color: #ffffff;
 }
 
 /* Header */
 .nbc-header {
+    /* Garante que o cabeçalho fique visível mesmo ao rolar a página */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    /* Fundo semi-transparente (95% opaco) */
     background: rgba(9, 9, 9, 0.95);
+    /* Efeito de desfoque para o que estiver por baixo (moderno) */
     backdrop-filter: blur(8px);
+    /* Borda inferior grossa na cor neon */
     border-bottom: 3px solid #02fe00;
     /* Verde neon mais grosso */
+    /* Transições suaves para efeitos de hover/scroll */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Sombra neon suave para destacar o header */
     box-shadow: 0 0 20px rgba(2, 254, 0, 0.3);
+    /* Fixa a posição na tela (redundante, mas garante) */
     position: fixed;
+    /* Garante que o header fique acima de outros elementos */
     z-index: 1000;
 }
 
 .nbc-header:hover {
+    /* Aumenta o brilho da sombra ao passar o mouse */
     box-shadow: 0 0 30px rgba(2, 254, 0, 0.5);
 }
 
 .container {
+    /* Largura máxima centralizada para o conteúdo principal */
     max-width: 1400px;
     margin: 0 auto;
+    /* Preenchimento horizontal para evitar que o conteúdo toque as bordas da tela */
     padding: 0 20px;
 }
 
 .nbc-header__flex {
+    /* Usa Flexbox para alinhar logo e navegação */
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* Altura fixa do cabeçalho */
     height: 90px;
 }
 
 .nbc-logo {
+    /* Estilo para o link do logo */
     display: flex;
     align-items: center;
     text-decoration: none;
     color: #ffffff;
+    /* Transição para efeito de hover */
     transition: transform 0.3s ease;
 }
 
 .nbc-logo:hover {
+    /* Efeito de zoom suave ao passar o mouse */
     transform: scale(1.05);
 }
 
 .nbc-logo__box {
+    /* Estilo do contêiner da imagem do logo */
     width: 75px;
     height: 55px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Fundo gradiente neon */
     background: linear-gradient(45deg, #02fe00, #019a00);
+    /* Sombra neon para o box */
     box-shadow: 0 0 15px rgba(2, 254, 0, 0.6);
 }
 
 .nbc-logo__img {
+    /* Ajusta o tamanho da imagem */
     height: 70px;
+    /* Adiciona um brilho neon à imagem */
     filter: drop-shadow(0 0 5px rgba(2, 254, 0, 0.8));
 }
 
 .nbc-logo__text {
+    /* Estilo do texto do logo */
     font-size: 24px;
     font-weight: 700;
     margin-left: 15px;
+    /* Sombra neon no texto */
     text-shadow: 0 0 10px rgba(2, 254, 0, 0.5);
 }
 
 .nbc-hidden-sm {
+    /* Classe utilitária para esconder em telas pequenas */
     display: none;
 }
 
 .nbc-nav--desktop {
+    /* Esconde a navegação desktop por padrão (será exibida em telas maiores) */
     display: none;
 }
 
 .nbc-nav__link {
+    /* Estilo dos links de navegação */
     color: #ffffff;
     text-decoration: none;
     font-weight: 500;
     margin-left: 40px;
+    /* Transições para o hover */
     transition: color 0.3s, text-shadow 0.3s;
     font-size: 18px;
+    /* Necessário para posicionar o pseudo-elemento `::after` */
     position: relative;
 }
 
 .nbc-nav__link::after {
+    /* Cria a linha que aparece abaixo do link ao passar o mouse */
     content: '';
     position: absolute;
     bottom: -5px;
     left: 0;
+    /* Começa com largura zero (invisível) */
     width: 0;
     height: 2px;
     background: #02fe00;
@@ -110,16 +145,19 @@ body {
 }
 
 .nbc-nav__link:hover {
+    /* Muda a cor do texto para neon e adiciona brilho */
     color: #02fe00;
     /* Verde neon */
     text-shadow: 0 0 10px rgba(2, 254, 0, 0.8);
 }
 
 .nbc-nav__link:hover::after {
+    /* A linha ganha 100% de largura ao passar o mouse */
     width: 100%;
 }
 
 .nbc-mobile-menu-btn {
+    /* Estilo do botão do menu hamburguer */
     background: none;
     border: none;
     cursor: pointer;
@@ -129,47 +167,61 @@ body {
 }
 
 .nbc-mobile-menu-btn:hover {
+    /* Pequeno efeito de zoom no botão */
     transform: scale(1.1);
 }
 
 .nbc-menu-icon {
+    /* Tamanho do ícone (☰ ou ✕) */
     font-size: 32px;
 }
 
 .nbc-mobile-menu {
+    /* O menu mobile começa escondido (exibido via JavaScript) */
     display: none;
+    /* Fundo escuro */
     background: #181818;
+    /* Borda superior neon */
     border-top: 3px solid #02fe00;
-    /* Verde neon mais grosso */
+    /* Sombra interna para dar profundidade */
     box-shadow: inset 0 0 20px rgba(2, 254, 0, 0.2);
 
 }
 
 .nbc-nav--mobile {
+    /* Estilo da lista de links no menu mobile */
     padding: 20px;
     display: flex;
     flex-direction: column;
+    /* Espaçamento entre os links */
     gap: 20px;
 }
 
 /* Main */
 .nbc-main {
+    /* Adiciona padding no topo para o conteúdo não ficar escondido atrás do header fixo */
     padding-top: 80px;
 }
 
 .nbc-hero {
+    /* Seção de destaque (Hero Section) */
     height: 100vh;
+    /* Define a imagem de fundo */
     background-image: url('../assets/imagens/time.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    /* Bordas arredondadas */
     border-radius: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #ffffff;
+    /* Sombra forte para o texto (garante leitura em cima da imagem) */
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    /* Margens grandes para afastar das bordas (desktop) */
     margin: 12vh 15vh;
+    /* Sombra neon forte + sombra interna suave */
     box-shadow: 0 15px 40px rgba(2, 254, 0, 0.6), inset 0 0 50px rgba(2, 254, 0, 0.1);
     position: relative;
     z-index: 1;
@@ -177,6 +229,7 @@ body {
 }
 
 .nbc-hero::before {
+    /* Overlay semi-transparente para escurecer a imagem e aplicar um leve tom neon */
     content: '';
     position: absolute;
     top: 0;
@@ -188,41 +241,38 @@ body {
 }
 
 .nbc-hero__content {
+    /* Conteúdo do hero fica acima do overlay */
     position: relative;
     z-index: 2;
     text-align: center;
     padding: 30px;
+    /* Animação para o conteúdo aparecer */
     animation: fadeInUp 1s ease-out;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .nbc-hero h1 {
+    /* Título principal grande */
     font-size: 80px;
     font-family: 'Montserrat', sans-serif;
+    /* Sombra neon forte */
     text-shadow: 0 0 20px rgba(2, 254, 0, 0.8);
 }
 
 .nbc-hero p {
+    /* Subtítulo */
     font-size: 24px;
     margin-top: 15px;
+    /* Sombra neon no subtítulo */
     text-shadow: 0 0 10px rgba(2, 254, 0, 0.5);
 }
 
 .cta-button {
+    /* Estilo base para botões de Chamada para Ação */
     display: inline-block;
     padding: 16px 32px;
+    /* Fundo gradiente neon */
     background: linear-gradient(45deg, #02fe00, #019a00);
+    /* Texto preto (contraste máximo) */
     color: #000000;
     text-decoration: none;
     border-radius: 8px;
@@ -230,12 +280,14 @@ body {
     margin-top: 30px;
     font-size: 18px;
     font-weight: 600;
+    /* Sombra neon */
     box-shadow: 0 0 15px rgba(2, 254, 0, 0.6);
     position: relative;
     overflow: hidden;
 }
 
 .cta-button::before {
+    /* Efeito de brilho/luz que desliza ao passar o mouse */
     content: '';
     position: absolute;
     top: 0;
@@ -247,42 +299,52 @@ body {
 }
 
 .cta-button:hover::before {
+    /* Faz o brilho deslizar para o lado oposto */
     left: 100%;
 }
 
 .cta-button:hover {
+    /* Inverte o gradiente, muda a cor do texto e aplica zoom */
     background: linear-gradient(45deg, #019a00, #02fe00);
     color: #ffffff;
     transform: scale(1.05);
+    /* Aumenta o brilho da sombra */
     box-shadow: 0 0 25px rgba(2, 254, 0, 0.8);
 }
 
 /* Seções */
 .nbc-section {
+    /* Estilo genérico para seções de conteúdo */
     max-width: 1300px;
     margin: 80px auto;
     padding: 0 30px;
 }
 
 .nbc-section h2 {
+    /* Títulos de seção */
     font-size: 50px;
     color: #02fe00;
     margin-bottom: 30px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
+    /* Sombra neon no título da seção */
     text-shadow: 0 0 15px rgba(2, 254, 0, 0.6);
 }
 
 .nbc-section p {
+    /* Parágrafos de seção */
     font-size: 18px;
+    /* Cor verde neon com baixa opacidade */
     color: rgba(2, 254, 0, 0.7);
     /* Verde desbotado */
     margin-bottom: 30px;
     line-height: 1.6;
+    /* Sombra suave */
     text-shadow: 0 0 5px rgba(2, 254, 0, 0.3);
 }
 
 .matchs {
+    /* Estilo específico para a seção de partidas/jogos */
     max-width: 1300px;
     margin: 80px auto;
     padding: 0 30px;
@@ -292,6 +354,7 @@ body {
 }
 
 .matchs h2 {
+    /* Repete o estilo do título de seção */
     font-size: 50px;
     color: #02fe00;
     margin-bottom: 30px;
@@ -302,14 +365,17 @@ body {
 
 /* Cards */
 .nbc-cards {
+    /* Layout padrão dos cards (será alterado pela responsividade) */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
 .nbc-match {
+    /* Estilo para um card de partida */
     background: #090909;
     border-radius: 15px;
+    /* Borda neon e sombra */
     border: 2px solid #02fe00;
     box-shadow: 0 0 15px rgba(2, 254, 0, 0.5);
     transition: all 0.3s ease;
@@ -319,6 +385,7 @@ body {
 }
 
 .matchs .nbc-cards {
+    /* Layout específico para cards de partidas (2 colunas) */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
@@ -328,11 +395,13 @@ body {
 }
 
 .nbc-card {
+    /* Estilo base para cards de elenco/galeria */
     background: #090909;
     border-radius: 15px;
     box-shadow: 0 5px 12px rgba(2, 254, 0, 0.4);
     transition: all 0.3s ease;
     padding: 20px;
+    /* Borda neon */
     border: 2px solid #02fe00;
     display: grid;
     justify-items: center;
@@ -342,6 +411,7 @@ body {
 }
 
 .nbc-card::before {
+    /* Overlay sutil de brilho no card */
     content: '';
     position: absolute;
     top: 0;
@@ -354,10 +424,12 @@ body {
 }
 
 .nbc-card:hover::before {
+    /* Ativa o overlay de brilho ao passar o mouse */
     opacity: 1;
 }
 
 .nbc-card img {
+    /* Estilo da imagem dentro do card */
     width: 100%;
     height: 320px;
     object-fit: cover;
@@ -366,23 +438,28 @@ body {
 }
 
 .nbc-card:hover img {
+    /* Zoom sutil na imagem ao passar o mouse */
     transform: scale(1.05);
 }
 
 .nbc-match:hover {
+    /* Efeito de levitação e brilho ao passar o mouse no card de partida */
     transform: translateY(-8px);
     box-shadow: 0 8px 24px rgba(2, 254, 0, 0.8), 0 0 40px rgba(2, 254, 0, 0.5);
 }
 
 .nbc-match h3 {
+    /* Título do card de partida */
     font-size: 26px;
     color: #02fe00;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 25px;
+    /* Sombra neon forte */
     text-shadow: 0 0 10px rgba(2, 254, 0, 0.7);
 }
 
 .nbc-match-images h1 {
+    /* Título (geralmente placar/vs) entre as imagens */
     font-size: 28px;
     color: #ffffff;
     text-shadow: 0 0 10px rgba(2, 254, 0, 1);
@@ -390,8 +467,10 @@ body {
 }
 
 .nbc-match-images img {
+    /* Imagens de logos/times no card de partida */
     width: 100px;
     height: 100px;
+    /* Borda neon arredondada */
     border: 2px solid #019a00;
     border-radius: 50%;
     box-shadow: 0 0 5px rgba(2, 254, 0, 0.4);
@@ -399,11 +478,13 @@ body {
 }
 
 .nbc-match:hover .nbc-match-images img {
+    /* Remove o zoom para evitar conflito com o hover do card */
     transform: scale(1.0);
 }
 
 
 .nbc-match p {
+    /* Detalhes do card de partida */
     font-size: 20px;
     color: #ffffff;
     font-weight: 500;
@@ -413,6 +494,7 @@ body {
 }
 
 .nbc-tag {
+    /* Estilo para tags (ex: 'VITÓRIA', 'AMISTOSO') */
     background: #02fe00;
     padding: 8px 20px;
     border-radius: 35px;
@@ -426,6 +508,7 @@ body {
 }
 
 .nbc-card h3 {
+    /* Título do card de elenco */
     padding: 20px;
     font-family: 'Montserrat', sans-serif;
     color: #ffffff;
@@ -434,36 +517,44 @@ body {
 }
 
 .nbc-card p {
+    /* Descrição do card de elenco */
     padding: 0 20px 20px;
     color: rgb(255, 255, 255);
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
     text-shadow: 0 0 3px rgba(2, 254, 0, 0.2);
 }
 
 .nbc-card:hover {
+    /* Efeito de levitação e brilho ao passar o mouse no card de elenco/galeria */
     transform: translateY(-8px);
     box-shadow: 0 8px 24px rgba(2, 254, 0, 0.6), 0 0 30px rgba(2, 254, 0, 0.4);
 }
 
 #elenco .nbc-cards {
+    /* Layout padrão de 4 colunas para a seção Elenco */
     grid-template-columns: repeat(4, 1fr);
 }
 
 .nbc-section:not(#elenco) .nbc-cards {
+    /* Layout padrão de 1 coluna para outras seções (exceto Elenco) */
     grid-template-columns: 1fr;
     width: 100%;
 }
 
 /* Footer */
 .nbc-footer {
+    /* Fundo mais escuro que o corpo, mas não totalmente preto */
     background: #181818;
+    /* Borda superior neon */
     border-top: 3px solid #02fe00;
     padding: 60px 0;
+    /* Sombra neon no topo do footer */
     box-shadow: 0 -5px 20px rgba(2, 254, 0, 0.3);
 }
 
 .nbc-footer__grid {
+    /* Layout do footer (1 coluna em mobile, alterado na responsividade) */
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
@@ -478,6 +569,7 @@ body {
 }
 
 .nbc-footer__title {
+    /* Títulos dentro do footer */
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -486,6 +578,7 @@ body {
 }
 
 .nbc-footer__text {
+    /* Texto normal no footer */
     color: rgba(2, 254, 0, 0.7);
     font-size: 16px;
     margin-bottom: 10px;
@@ -493,12 +586,14 @@ body {
 }
 
 .nbc-footer__links {
+    /* Links de navegação no footer */
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
 .nbc-footer__link {
+    /* Estilo base dos links do footer (neon desbotado) */
     color: rgba(2, 254, 0, 0.7);
     text-decoration: none;
     font-size: 16px;
@@ -507,6 +602,7 @@ body {
 }
 
 .nbc-footer__link::after {
+    /* Linha de hover nos links do footer */
     content: '';
     position: absolute;
     bottom: -2px;
@@ -518,36 +614,45 @@ body {
 }
 
 .nbc-footer__link:hover {
+    /* Links do footer em neon brilhante no hover */
     color: #02fe00;
     text-shadow: 0 0 10px rgba(2, 254, 0, 0.8);
 }
 
 .nbc-footer__link:hover::after {
+    /* Linha de hover se expande */
     width: 100%;
 }
 
 .nbc-footer__cta {
+    /* Ajuste de tamanho do botão CTA no footer */
     padding: 10px 28px;
     font-size: 16px;
 }
 
 .nbc-footer__bottom {
+    /* Seção de direitos autorais */
     border-top: 3px solid #02fe00;
     margin-top: 40px;
     padding-top: 40px;
     text-align: center;
+    /* Cor neon bem sutil */
     color: rgba(2, 254, 0, 0.5);
     font-size: 16px;
     text-shadow: 0 0 5px rgba(2, 254, 0, 0.2);
 }
 
 /* Responsividade */
+
+/* --- 1. Telas Muito Pequenas (Mobile Horizontal/iPhone 5: até 480px) --- */
 @media (max-width: 480px) {
     .nbc-hero h1 {
+        /* Reduz o tamanho do título principal */
         font-size: 40px;
     }
 
     .nbc-match-images img {
+        /* Reduz o tamanho dos logos de times nos cards de partida */
         width: 80px;
         height: 80px;
     }
@@ -556,48 +661,60 @@ body {
 /* --- 2. Telas Médias/Mobile (Tablet Vertical: até 767px) --- */
 @media (max-width: 767px) {
     .nbc-nav--desktop {
+        /* Garante que a navegação desktop esteja escondida */
         display: none;
     }
 
     .nbc-mobile-menu-btn {
+        /* Garante que o botão hamburguer esteja visível */
         display: block;
     }
 
     .nbc-hero {
+        /* Remove a imagem de fundo em mobile */
         background-image: none;
+        /* Define a cor de fundo sólida */
         background-color: #090909;
+        /* Remove sombras */
         box-shadow: none;
+        /* Ajusta as margens para ocupar mais espaço na tela */
         margin: 15px;
     }
 
     .nbc-section:not(#elenco) .nbc-cards {
+        /* Layout de 1 coluna para cards em todas as seções, exceto Elenco (no mobile) */
         grid-template-columns: 1fr;
     }
 
     #elenco .nbc-cards {
+        /* Layout de 1 coluna para cards de Elenco em mobile */
         grid-template-columns: 1fr;
     }
 
     .matchs .nbc-cards {
+        /* Layout de 1 coluna para cards de Partidas em mobile */
         grid-template-columns: 1fr;
+        /* Limita a largura do contêiner de partidas */
         max-width: 400px;
     }
 
     .nbc-match-images {
+        /* Alinha verticalmente os logos VS no card de partida */
         flex-direction: column;
         gap: 10px;
     }
 
     .nbc-logo__text nbc-hidden-sm {
+        /* Regra duplicada, mas a intenção é esconder o texto do logo em telas pequenas */
         display: none;
     }
 }
 
 
-
 /* --- 3. Telas Maiores (SM e maiores: min-width 640px) --- */
 @media (min-width: 640px) {
     .nbc-nav--desktop {
+        /* Esta regra é ambígua/redundante aqui, pois min-width 768px a sobrescreve */
         display: none;
     }
 }
@@ -607,34 +724,41 @@ body {
 @media (min-width: 768px) {
 
     .nbc-nav--desktop {
+        /* Exibe a navegação desktop */
         display: flex;
         align-items: center;
     }
 
     .nbc-mobile-menu-btn {
+        /* Esconde o botão hamburguer */
         display: none;
     }
 
     .nbc-footer__grid {
+        /* Layout do footer em 3 colunas */
         grid-template-columns: repeat(3, 1fr);
     }
 
     .nbc-hero h1 {
+        /* Aumenta o título principal novamente */
         font-size: 60px;
     }
 
     #elenco .nbc-cards {
+        /* Layout de 2 colunas para cards de Elenco em tablets */
         grid-template-columns: repeat(2, 1fr);
         max-width: 800px;
         margin: 0 auto;
     }
 
     .matchs .nbc-cards {
+        /* Layout de 2 colunas para cards de Partidas */
         grid-template-columns: repeat(2, 1fr);
         max-width: 1000px;
     }
 
     .nbc-logo__text nbc-hidden-sm {
+        /* Regra ambígua, provavelmente destinada a fazer o texto do logo aparecer */
         display: none;
     }
 }
@@ -642,10 +766,12 @@ body {
 /* --- 5. Telas Desktop Médio/Grande (min-width 1024px) --- */
 @media (min-width: 1024px) {
     .nbc-hero h1 {
+        /* Título principal no tamanho máximo */
         font-size: 80px;
     }
 
     #elenco .nbc-cards {
+        /* Layout de 4 colunas para cards de Elenco em desktop */
         grid-template-columns: repeat(4, 1fr);
         max-width: 1300px;
     }
