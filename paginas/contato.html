@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novo Basquete Cedro (NBC) - Contato</title>
-    <link rel="stylesheet" href="../styles/contato.css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">    
+    <link rel="stylesheet" href="../styles/contato.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
     <header class="header-fixed">
         <div class="container">
@@ -38,7 +42,8 @@
                 <a href="index.html" class="nav-link" onclick="closeMobileMenu()">Início</a>
                 <a href="#time" class="nav-link" onclick="closeMobileMenu()">Time</a>
                 <a href="#partidas" class="nav-link" onclick="closeMobileMenu()">Partidas</a>
-                <a href="#galeria" class="nav-link" onclick="closeMobileMenu()">Galeria</a> <!-- Mantido como "Galeria" -->
+                <a href="#galeria" class="nav-link" onclick="closeMobileMenu()">Galeria</a>
+                <!-- Mantido como "Galeria" -->
                 <a href="contato.html" class="nav-link" onclick="closeMobileMenu()">Contato</a>
             </nav>
         </div>
@@ -56,7 +61,9 @@
                             Solicite um <span class="form-title-highlight">Amistoso</span>
                         </h1>
                         <p class="form-description">
-                            Preencha o formulário abaixo para solicitar um amistoso. <span id="p-white">Atenção: Aceitamos apenas solicitações de amistosos amigáveis. Não realizamos campeonatos ou outros eventos oficiais.</span> Responderemos em breve!
+                            Preencha o formulário abaixo para solicitar um amistoso. <span id="p-white">Atenção:
+                                Aceitamos apenas solicitações de amistosos amigáveis. Não realizamos campeonatos ou
+                                outros eventos oficiais.</span> Responderemos em breve!
                         </p>
                     </div>
 
@@ -68,7 +75,8 @@
                                     <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
                                     <h3>Solicitação Enviada!</h3>
                                     <p>Recebemos sua solicitação. Entraremos em contato em breve!</p>
-                                    <button type="button" onclick="resetForm()" class="cta-button">Enviar Nova Solicitação</button>
+                                    <button type="button" onclick="resetForm()" class="cta-button">Enviar Nova
+                                        Solicitação</button>
                                 </div>
 
                                 <form id="solicitacao-form" class="form-space">
@@ -76,19 +84,23 @@
                                     <!-- Nome da Equipe -->
                                     <div class="form-group">
                                         <label for="equipe" class="form-label">Nome da Equipe</label>
-                                        <input type="text" id="equipe" name="equipe" placeholder="Digite o nome da sua equipe" class="form-input" required>
+                                        <input type="text" id="equipe" name="equipe"
+                                            placeholder="Digite o nome da sua equipe" class="form-input" required>
                                     </div>
 
                                     <!-- Contato -->
                                     <div class="form-group">
                                         <label for="contato" class="form-label">E-mail ou Telefone</label>
-                                        <input type="text" id="contato" name="contato" placeholder="seu@email.com ou (88) 99999-9999" class="form-input" required>
+                                        <input type="text" id="contato" name="contato"
+                                            placeholder="seu@email.com ou (88) 99999-9999" class="form-input" required>
                                     </div>
 
                                     <!-- Mensagem -->
                                     <div class="form-group">
                                         <label for="mensagem" class="form-label">Detalhes da Solicitação</label>
-                                        <textarea id="mensagem" name="mensagem" placeholder="Conte-nos mais sobre sua solicitação: data preferida, local, nível da equipe, etc." rows="13" class="form-input" required></textarea>
+                                        <textarea id="mensagem" name="mensagem"
+                                            placeholder="Conte-nos mais sobre sua solicitação: data preferida, local, nível da equipe, etc."
+                                            rows="13" class="form-input" required></textarea>
                                     </div>
 
                                     <!-- Submit Button -->
@@ -228,7 +240,7 @@
         const submitText = document.getElementById('submit-text');
         const loadingText = document.getElementById('loading-text');
 
-        form.addEventListener('submit', function(event) {
+        form.addEventListener('submit', function (event) {
             event.preventDefault();
 
             // Validação básica
@@ -288,4 +300,5 @@
         }
     </script>
 </body>
+
 </html>

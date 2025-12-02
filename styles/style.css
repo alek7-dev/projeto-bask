@@ -20,7 +20,8 @@ body {
     right: 0;
     background: rgba(9, 9, 9, 0.95);
     backdrop-filter: blur(8px);
-    border-bottom: 3px solid #02fe00; /* Verde neon mais grosso */
+    border-bottom: 3px solid #02fe00;
+    /* Verde neon mais grosso */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0 20px rgba(2, 254, 0, 0.3);
     position: fixed;
@@ -109,7 +110,8 @@ body {
 }
 
 .nbc-nav__link:hover {
-    color: #02fe00; /* Verde neon */
+    color: #02fe00;
+    /* Verde neon */
     text-shadow: 0 0 10px rgba(2, 254, 0, 0.8);
 }
 
@@ -137,7 +139,8 @@ body {
 .nbc-mobile-menu {
     display: none;
     background: #181818;
-    border-top: 3px solid #02fe00; /* Verde neon mais grosso */
+    border-top: 3px solid #02fe00;
+    /* Verde neon mais grosso */
     box-shadow: inset 0 0 20px rgba(2, 254, 0, 0.2);
 
 }
@@ -155,11 +158,11 @@ body {
 }
 
 .nbc-hero {
-    height: 100vh; 
+    height: 100vh;
     background-image: url('../assets/imagens/time.jpg');
     background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat; 
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 1.5rem;
     display: flex;
     align-items: center;
@@ -197,6 +200,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -219,7 +223,7 @@ body {
     display: inline-block;
     padding: 16px 32px;
     background: linear-gradient(45deg, #02fe00, #019a00);
-    color: #000000; 
+    color: #000000;
     text-decoration: none;
     border-radius: 8px;
     transition: all 0.3s ease;
@@ -262,7 +266,7 @@ body {
 
 .nbc-section h2 {
     font-size: 50px;
-    color: #02fe00; 
+    color: #02fe00;
     margin-bottom: 30px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
@@ -271,7 +275,8 @@ body {
 
 .nbc-section p {
     font-size: 18px;
-    color: rgba(2, 254, 0, 0.7); /* Verde desbotado */
+    color: rgba(2, 254, 0, 0.7);
+    /* Verde desbotado */
     margin-bottom: 30px;
     line-height: 1.6;
     text-shadow: 0 0 5px rgba(2, 254, 0, 0.3);
@@ -288,7 +293,7 @@ body {
 
 .matchs h2 {
     font-size: 50px;
-    color: #02fe00; 
+    color: #02fe00;
     margin-bottom: 30px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
@@ -298,25 +303,26 @@ body {
 /* Cards */
 .nbc-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
 .nbc-match {
     background: #090909;
     border-radius: 15px;
-    border: 2px solid #02fe00; 
-    box-shadow: 0 0 15px rgba(2, 254, 0, 0.5); 
+    border: 2px solid #02fe00;
+    box-shadow: 0 0 15px rgba(2, 254, 0, 0.5);
     transition: all 0.3s ease;
     padding: 30px 20px;
     text-align: center;
     overflow: hidden;
 }
+
 .matchs .nbc-cards {
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    max-width: 1000px; 
+    max-width: 1000px;
     width: 100%;
     margin: 0 auto;
 }
@@ -365,44 +371,44 @@ body {
 
 .nbc-match:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(2, 254, 0, 0.8), 0 0 40px rgba(2, 254, 0, 0.5); 
+    box-shadow: 0 8px 24px rgba(2, 254, 0, 0.8), 0 0 40px rgba(2, 254, 0, 0.5);
 }
 
 .nbc-match h3 {
-    font-size: 26px; 
-    color: #02fe00; 
+    font-size: 26px;
+    color: #02fe00;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 25px;
     text-shadow: 0 0 10px rgba(2, 254, 0, 0.7);
 }
 
 .nbc-match-images h1 {
-    font-size: 28px; 
+    font-size: 28px;
     color: #ffffff;
-    text-shadow: 0 0 10px rgba(2, 254, 0, 1); 
+    text-shadow: 0 0 10px rgba(2, 254, 0, 1);
     margin: 0 10px;
 }
 
 .nbc-match-images img {
-    width: 100px; 
+    width: 100px;
     height: 100px;
     border: 2px solid #019a00;
-    border-radius: 50%; 
+    border-radius: 50%;
     box-shadow: 0 0 5px rgba(2, 254, 0, 0.4);
     transition: transform 0.3s;
 }
 
 .nbc-match:hover .nbc-match-images img {
-    transform: scale(1.0); 
+    transform: scale(1.0);
 }
 
 
 .nbc-match p {
     font-size: 20px;
-    color: #ffffff; 
+    color: #ffffff;
     font-weight: 500;
     line-height: 1.8;
-    margin: 8px 0;
+    margin: 10px 0;
     text-shadow: 0 0 5px rgba(2, 254, 0, 0.3);
 }
 
@@ -429,7 +435,7 @@ body {
 
 .nbc-card p {
     padding: 0 20px 20px;
-    color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255);
     font-size: 16px;
     line-height: 1.5;
     text-shadow: 0 0 3px rgba(2, 254, 0, 0.2);
@@ -452,7 +458,7 @@ body {
 /* Footer */
 .nbc-footer {
     background: #181818;
-    border-top: 3px solid #02fe00; 
+    border-top: 3px solid #02fe00;
     padding: 60px 0;
     box-shadow: 0 -5px 20px rgba(2, 254, 0, 0.3);
 }
@@ -480,7 +486,7 @@ body {
 }
 
 .nbc-footer__text {
-    color: rgba(2, 254, 0, 0.7); 
+    color: rgba(2, 254, 0, 0.7);
     font-size: 16px;
     margin-bottom: 10px;
     text-shadow: 0 0 5px rgba(2, 254, 0, 0.3);
@@ -493,7 +499,7 @@ body {
 }
 
 .nbc-footer__link {
-    color: rgba(2, 254, 0, 0.7); 
+    color: rgba(2, 254, 0, 0.7);
     text-decoration: none;
     font-size: 16px;
     transition: all 0.3s ease;
@@ -512,7 +518,7 @@ body {
 }
 
 .nbc-footer__link:hover {
-    color: #02fe00; 
+    color: #02fe00;
     text-shadow: 0 0 10px rgba(2, 254, 0, 0.8);
 }
 
@@ -526,11 +532,11 @@ body {
 }
 
 .nbc-footer__bottom {
-    border-top: 3px solid #02fe00; 
+    border-top: 3px solid #02fe00;
     margin-top: 40px;
     padding-top: 40px;
     text-align: center;
-    color: rgba(2, 254, 0, 0.5); 
+    color: rgba(2, 254, 0, 0.5);
     font-size: 16px;
     text-shadow: 0 0 5px rgba(2, 254, 0, 0.2);
 }
@@ -538,10 +544,11 @@ body {
 /* Responsividade */
 @media (max-width: 480px) {
     .nbc-hero h1 {
-        font-size: 40px; 
+        font-size: 40px;
     }
+
     .nbc-match-images img {
-        width: 80px; 
+        width: 80px;
         height: 80px;
     }
 }
@@ -551,31 +558,37 @@ body {
     .nbc-nav--desktop {
         display: none;
     }
+
     .nbc-mobile-menu-btn {
         display: block;
     }
+
     .nbc-hero {
         background-image: none;
-        background-color: #090909; 
-        box-shadow: none; 
+        background-color: #090909;
+        box-shadow: none;
         margin: 15px;
     }
+
     .nbc-section:not(#elenco) .nbc-cards {
         grid-template-columns: 1fr;
     }
-    
+
     #elenco .nbc-cards {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
+
     .matchs .nbc-cards {
-        grid-template-columns: 1fr; 
-        max-width: 400px; 
+        grid-template-columns: 1fr;
+        max-width: 400px;
     }
+
     .nbc-match-images {
-        flex-direction: column; 
+        flex-direction: column;
         gap: 10px;
     }
-    .nbc-logo__text nbc-hidden-sm{
+
+    .nbc-logo__text nbc-hidden-sm {
         display: none;
     }
 }
@@ -586,17 +599,18 @@ body {
 @media (min-width: 640px) {
     .nbc-nav--desktop {
         display: none;
-    }   
+    }
 }
 
 
 /* --- 4. Telas Desktop Pequeno/Tablet Horizontal (min-width 768px) --- */
 @media (min-width: 768px) {
-    
+
     .nbc-nav--desktop {
         display: flex;
         align-items: center;
     }
+
     .nbc-mobile-menu-btn {
         display: none;
     }
@@ -608,18 +622,19 @@ body {
     .nbc-hero h1 {
         font-size: 60px;
     }
-    
+
     #elenco .nbc-cards {
         grid-template-columns: repeat(2, 1fr);
-        max-width: 800px; 
+        max-width: 800px;
         margin: 0 auto;
     }
 
     .matchs .nbc-cards {
-        grid-template-columns: repeat(2, 1fr); 
-        max-width: 1000px; 
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1000px;
     }
-    .nbc-logo__text nbc-hidden-sm{
+
+    .nbc-logo__text nbc-hidden-sm {
         display: none;
     }
 }
@@ -629,9 +644,10 @@ body {
     .nbc-hero h1 {
         font-size: 80px;
     }
+
     #elenco .nbc-cards {
         grid-template-columns: repeat(4, 1fr);
-        max-width: 1300px; 
+        max-width: 1300px;
     }
 
 }
